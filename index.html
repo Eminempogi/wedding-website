@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#641C2D">
+  <meta name="description" content="A timeless wedding celebration">
+  <title>Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Italiana&family=Italianno&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="invitation-locked">
+  <div class="paper-noise" aria-hidden="true"></div>
+
+  <div id="opening" class="opening" aria-label="Wedding invitation cover">
+    <div class="opening-photo" id="openingPhoto"></div>
+    <div class="opening-shade"></div>
+    <div class="opening-frame"><span></span><span></span></div>
+    <div class="opening-content">
+      <p class="eyebrow light">The wedding of</p>
+      <h1><span id="coverGroom"></span><i>&amp;</i><span id="coverBride"></span></h1>
+      <div class="gold-flourish"><span></span><b>♥</b><span></span></div>
+      <p class="opening-copy">Together with their families, we invite you<br>to celebrate their wedding</p>
+      <p class="opening-meta"><span id="coverDate"></span><em>•</em><span id="coverVenue"></span></p>
+      <button class="btn btn-primary ripple" id="openInvitation">Accept Invitation <span>→</span></button>
+    </div>
+    <p class="scroll-hint">A love story awaits <span></span></p>
+  </div>
+
+  <div class="invitation-transition" id="invitationTransition" aria-hidden="true">
+    <div class="transition-glow" aria-hidden="true"></div>
+    <div class="envelope-scene" aria-hidden="true">
+      <div class="letter-sheet">
+        <div class="letter-border"></div>
+        <p class="letter-kicker">With joyful hearts</p>
+        <div class="letter-monogram" id="transitionMonogram"></div>
+        <h2><span id="letterGroom"></span><i>&amp;</i><span id="letterBride"></span></h2>
+        <div class="letter-flourish">— ✦ —</div>
+        <p>invite you to share in the beginning of their forever</p>
+        <small id="letterDate"></small>
+      </div>
+      <div class="envelope">
+        <div class="envelope-back"></div>
+        <div class="envelope-flap"></div>
+        <div class="envelope-pocket"></div>
+        <div class="wax-seal"><span id="sealMonogram"></span></div>
+      </div>
+    </div>
+    <p class="transition-caption" id="transitionCaption" role="status" aria-live="polite"></p>
+  </div>
+
+  <main id="invitation" aria-hidden="true">
+    <nav class="nav" id="nav">
+      <a href="#home" class="nav-mark" aria-label="Close invitation and return to cover"><span id="monogram"></span></a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+        <div class="nav-links">
+          <a href="#story">Our Story</a>
+          <a href="#details">Details</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#entourage">Entourage</a>
+          <a href="#rsvp">RSVP</a>
+        </div>
+    </nav>
+
+    <section class="home hero" id="home">
+      <div class="botanical" aria-hidden="true">❦</div>
+      <div class="hero-image-wrap reveal zoom"><img id="heroImage" alt="The happy couple" fetchpriority="high"></div>
+      <div class="hero-card reveal up">
+        <p class="eyebrow">Save the date</p>
+        <h2><span id="heroGroom"></span> <i>&amp;</i> <span id="heroBride"></span></h2>
+        <div class="ornament">— ✦ —</div>
+        <p class="hero-date" id="heroDate"></p><p class="hero-place" id="heroVenue"></p>
+        <a href="#details" class="text-link">Discover the details <span>↓</span></a>
+      </div>
+    </section>
+
+    <section class="intro section-pad reveal">
+      <p class="script-note">Our forever begins</p>
+      <blockquote>“Whatever our souls are made of,<br>his and mine are the same.”</blockquote>
+      <p class="attribution">— Emily Brontë</p>
+    </section>
+
+    <section class="story section-pad" id="story">
+      <header class="section-heading reveal up"><p class="eyebrow">Once upon a time</p><h2>Our Love Story</h2><div class="title-line"></div></header>
+      <div class="story-list" id="storyList"></div>
+    </section>
+
+    <section class="details section-pad" id="details">
+      <header class="section-heading reveal up"><p class="eyebrow light">The celebration</p><h2>Wedding Details</h2><div class="title-line gold"></div></header>
+      <div class="details-grid">
+        <article class="detail-card reveal up"><div class="line-icon">♙</div><p class="eyebrow">With all our hearts</p><h3>Ceremony</h3><p id="ceremonyWhen"></p><p class="venue" id="ceremonyVenue"></p><p id="ceremonyAddress"></p><a id="ceremonyMap" class="btn btn-outline light ripple" target="_blank" rel="noopener">View on Map</a></article>
+        <div class="detail-divider"><span>♥</span></div>
+        <article class="detail-card reveal up"><div class="line-icon">♧</div><p class="eyebrow">Dinner &amp; dancing</p><h3>Reception</h3><p id="receptionWhen"></p><p class="venue" id="receptionVenue"></p><p id="receptionAddress"></p><a id="receptionMap" class="btn btn-outline light ripple" target="_blank" rel="noopener">View on Map</a></article>
+      </div>
+    </section>
+
+    <section class="countdown section-pad" id="countdown">
+      <div class="countdown-inner reveal zoom">
+        <p class="eyebrow">Counting every moment</p>
+        <h2>Until We Say “I Do”</h2>
+
+        <div class="count-grid" id="countGrid">
+          <div><strong id="years">00</strong><span>Years</span></div>
+          <i></i>
+          <div><strong id="days">000</strong><span>Days</span></div>
+          <i></i>
+          <div><strong id="hours">00</strong><span>Hours</span></div>
+          <i></i>
+          <div><strong id="minutes">00</strong><span>Minutes</span></div>
+          <i></i>
+          <div><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+
+        <p class="today-message" id="todayMessage">Today is the day! ❤️</p>
+      </div>
+    </section>
+
+    <section class="schedule section-pad" id="timeline">
+      <header class="section-heading reveal up"><p class="eyebrow">A day to remember</p><h2>Order of the Day</h2><div class="title-line"></div></header>
+      <div class="schedule-line" id="scheduleList"></div>
+    </section>
+
+    <section class="gallery section-pad" id="gallery">
+      <header class="section-heading reveal up"><p class="eyebrow">Fragments of forever</p><h2>Our Gallery</h2><div class="title-line"></div></header>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <section class="dress section-pad" id="dress">
+      <div class="dress-image reveal zoom"><img id="dressImage" alt="Elegant wedding details" loading="lazy"></div>
+      <div class="dress-copy reveal up"><p class="eyebrow">What to wear</p><h2>Dress Code</h2><div class="mini-flourish">✦</div><h3 id="dressTitle"></h3><p id="dressDescription"></p><div class="swatches" aria-label="Suggested color palette"><span></span><span></span><span></span><span></span><span></span></div><small>Kindly reserve white for the bride</small></div>
+    </section>
+
+    <section class="hospitality section-pad" id="hospitality" aria-label="Wedding notes">
+      <div class="hospitality-intro reveal up">
+        <p class="script-note">A little note from us</p>
+        <p>Thank you for helping us keep the day warm, joyful, and full of love.</p>
+      </div>
+      <div class="hospitality-grid">
+        <article class="hospitality-card reveal up">
+          <div class="note-icon" aria-hidden="true">❦</div>
+          <p class="eyebrow">Celebrate with us</p>
+          <h2>Wedding Rules</h2>
+          <p>Come as you are, celebrate wholeheartedly, and most importantly, enjoy the day with love and joy.</p>
+          <ul>
+            <li>Be present in the moment</li>
+            <li>Share your smiles and best wishes</li>
+            <li>Dance with us when the music begins</li>
+          </ul>
+        </article>
+        <article class="hospitality-card gift-card reveal up">
+          <div class="note-icon" aria-hidden="true">♡</div>
+          <p class="eyebrow">With grateful hearts</p>
+          <h2>Preferred Gifts</h2>
+          <p class="romantic-emphasis">Your presence is the greatest gift we could ask for.</p>
+          <p>If you wish to bless us with a gift, a monetary gift would be sincerely appreciated as we begin this new chapter together.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     ENTOURAGE SECTION
+     ========================================================= -->
+
+<section class="entourage-section section-pad" id="entourage">
+
+  <div class="entourage-section-inner reveal zoom">
+
+    <p class="eyebrow">Surrounded by love</p>
+
+    <h2>Our Entourage</h2>
+
+    <div class="title-line"></div>
+
+    <p class="entourage-section-text">
+      Meet the special people who will stand beside us
+      as we begin this beautiful chapter together.
+    </p>
+
+    <button
+      type="button"
+      class="btn btn-primary ripple"
+      id="openEntourage"
+    >
+      Meet Our Entourage
+      <span>✦</span>
+    </button>
+
+  </div>
+
+</section>
+
+    <section class="rsvp section-pad" id="rsvp">
+      <div class="rsvp-border reveal zoom"><p class="eyebrow light">Kindly reply</p><h2>We Can't Wait to<br>Celebrate With You</h2><p>Please respond by <span id="rsvpDeadline"></span></p><button class="btn btn-cream ripple" id="openRsvp">RSVP Now <span>♡</span></button></div>
+    </section>
+
+    <footer><div class="footer-monogram" id="footerMonogram"></div><p>Thank you for being part of our story.</p><p class="footer-names" id="footerNames"></p><a href="#home" aria-label="Back to top" class="back-top">↑</a></footer>
+  </main>
+
+  <button class="music-button" id="musicButton" aria-label="Play music" title="A special song for our wedding day">
+      <span class="music-bars">
+          <i></i>
+          <i></i>
+          <i></i>
+      </span>
+
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 18V5l11-2v13M9 9l11-2M6 21c-2 0-3-1-3-2.5S4 16 6 16s3 2.5 3 3.5S8 21 6 21Zm11-2c-2 0-3-1-3-2.5s1-2.5 3-2.5 3 1 3 2.5S19 19 17 19Z"/>
+      </svg>
+  </button>
+
+  <audio id="music" preload="none"></audio>
+
+<!-- =========================================================
+     ENTOURAGE MODAL
+     ========================================================= -->
+
+<div
+  class="entourage-modal"
+  id="entourageModal"
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="entourageTitle"
+>
+
+  <div
+    class="entourage-modal-backdrop"
+    data-close="entourage"
+  ></div>
+
+
+  <div class="entourage-modal-card">
+
+    <button
+      class="entourage-modal-close"
+      data-close="entourage"
+      aria-label="Close entourage"
+      type="button"
+    >
+      &times;
+    </button>
+
+
+    <div class="entourage-modal-header">
+
+      <p class="eyebrow">
+        Our Beloved
+      </p>
+
+      <h2 id="entourageTitle">
+        Entourage
+      </h2>
+
+      <div class="entourage-modal-flourish">
+        <span></span>
+        <b>✦</b>
+        <span></span>
+      </div>
+
+      <p>
+        Surrounded by the people who have shared
+        our journey and will stand beside us.
+      </p>
+
+    </div>
+
+
+    <!-- JavaScript will generate the entourage here -->
+
+    <div
+      class="entourage-groups"
+      id="entourageContent"
+    ></div>
+
+
+  </div>
+
+</div>
+
+  <!-- =========================================================
+       RSVP MODAL
+       ========================================================= -->
+
+<div class="modal" id="rsvpModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
+
+  <div class="modal-backdrop" data-close="rsvp"></div>
+
+  <div class="modal-card">
+
+    <button class="modal-close" data-close="rsvp" aria-label="Close">
+      ×
+    </button>
+
+    <p class="eyebrow">Kindly reply</p>
+
+    <h2 id="rsvpTitle">Will You Join Us?</h2>
+
+
+    <!-- ==============================
+         STEP 1: GUEST LOOKUP
+         ============================== -->
+
+    <div id="guestLookup">
+
+      <p class="rsvp-intro">
+        Please enter your full name as it appears on your invitation.
+      </p>
+
+      <label>
+        Full Name
+        <input
+          id="guestName"
+          type="text"
+          autocomplete="name"
+          placeholder="Your full name"
+        >
+      </label>
+
+      <p
+        class="rsvp-error"
+        id="guestError"
+        style="display: none;"
+      ></p>
+
+      <button
+        class="btn btn-primary ripple"
+        type="button"
+        id="checkGuest"
+      >
+        Continue <span>→</span>
+      </button>
+
+    </div>
+
+
+    <!-- ==============================
+         STEP 2: PLUS ONE
+         ============================== -->
+
+    <div id="plusOneStep" style="display: none;">
+
+      <p class="rsvp-welcome" id="plusOneWelcome"></p>
+
+      <p class="rsvp-intro">
+        Your invitation includes a plus one.
+        Please enter their name below.
+      </p>
+
+      <label>
+        Plus One's Full Name
+        <input
+          id="plusOneName"
+          type="text"
+          autocomplete="name"
+          placeholder="Their full name"
+        >
+      </label>
+
+      <p
+        class="rsvp-error"
+        id="plusOneError"
+        style="display: none;"
+      ></p>
+
+      <button
+        class="btn btn-primary ripple"
+        type="button"
+        id="continueWithPlusOne"
+      >
+        Continue <span>→</span>
+      </button>
+
+    </div>
+
+
+    <!-- ==============================
+         STEP 3: RSVP FORM
+         ============================== -->
+
+    <form id="rsvpForm" style="display: none;">
+
+      <p
+        class="rsvp-welcome"
+        id="guestWelcome"
+      ></p>
+
+      <input
+        type="hidden"
+        name="name"
+        id="rsvpName"
+      >
+
+      <input
+        type="hidden"
+        name="plusOne"
+        id="rsvpPlusOne"
+      >
+
+      <label>
+        Will you attend?
+        <select name="attending" required>
+          <option value="">Choose</option>
+          <option>Joyfully accepts</option>
+          <option>Regretfully declines</option>
+        </select>
+      </label>
+
+      <label>
+        Message
+        <textarea
+          name="message"
+          rows="3"
+          placeholder="Share a note for the happy couple"
+        ></textarea>
+      </label>
+
+      <button
+        class="btn btn-primary ripple"
+        type="submit"
+      >
+        Send My RSVP <span>→</span>
+      </button>
+
+    </form>
+
+
+    <!-- ==============================
+         SUCCESS
+         ============================== -->
+
+    <div
+      class="form-success"
+      id="formSuccess"
+      style="display: none;"
+    >
+
+      <div>♡</div>
+
+      <h3>Thank you!</h3>
+
+      <p>
+        Your RSVP has been received.
+        We can't wait to celebrate with you. ❤️
+      </p>
+
+      <button
+        class="text-link"
+        data-close="rsvp"
+      >
+        Close
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer"><button class="lightbox-close" aria-label="Close gallery">×</button><button class="lightbox-prev" aria-label="Previous photo">‹</button><div class="lightbox-stage"><img alt="Gallery photo"><p></p></div><button class="lightbox-next" aria-label="Next photo">›</button><span class="lightbox-count"></span></div>
+  <div class="heart-burst" id="heartBurst" aria-hidden="true"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

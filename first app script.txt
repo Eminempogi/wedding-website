@@ -1,0 +1,103 @@
+function doPost(e) {
+
+  try {
+
+    const sheet = SpreadsheetApp
+      .getActiveSpreadsheet()
+      .getSheetByName("RSVP Form");
+
+    const data = JSON.parse(e.postData.contents);
+
+    const name = (data.name || "").trim();
+    const email = (data.email || "").trim().toLowerCase();
+    const attending = (data.attending || "").trim();
+    const message = (data.message || "").trim();
+
+    // Convert attendance response to Yes / No
+    let criteria = "";
+
+    if (attending === "Joyfully accepts") {
+      criteria = "Yes";
+    } else if (attending === "Regretfully declines") {
+      criteria = "No";
+    }
+
+    // Get all existing email addresses from Column B
+    const lastRow = sheet.getLastRow();
+
+    let existingRow = -1;
+
+    if (lastRow > 1) {
+
+      const emails = sheet
+        .getRange(2, 2, lastRow - 1, 1)
+        .getValues();
+
+      for (let i = 0; i < emails.length; i++) {
+
+        const existingEmail = String(emails[i][0])
+          .trim()
+          .toLowerCase();
+
+        if (existingEmail === email) {
+          existingRow = i + 2;
+          break;
+        }
+      }
+    }
+
+    // If email already exists, UPDATE the existing RSVP
+    if (existingRow !== -1) {
+
+      sheet.getRange(existingRow, 1, 1, 6).setValues([[
+        name,
+        email,
+        attending,
+        criteria,
+        message,
+        new Date()
+      ]]);
+
+      return ContentService
+        .createTextOutput(
+          JSON.stringify({
+            success: true,
+            updated: true,
+            message: "Existing RSVP updated."
+          })
+        )
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    // If email doesn't exist, CREATE a new RSVP
+    sheet.appendRow([
+      name,
+      email,
+      attending,
+      criteria,
+      message,
+      new Date()
+    ]);
+
+    return ContentService
+      .createTextOutput(
+        JSON.stringify({
+          success: true,
+          updated: false,
+          message: "New RSVP created."
+        })
+      )
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+
+    return ContentService
+      .createTextOutput(
+        JSON.stringify({
+          success: false,
+          error: error.toString()
+        })
+      )
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
