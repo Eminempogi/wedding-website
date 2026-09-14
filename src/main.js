@@ -30,10 +30,10 @@ const weddingConfig = {
     description: "We invite you to dress in rich, romantic tones and timeless silhouettes. Think floor-length gowns, refined cocktail dresses, and dark suits or tuxedos."
   },
   story: [
-    { title: "How We Met", date: "2022", text: "It started with stolen glances at work, followed by a simple coffee that turned into hours of stories and laughter. We lost track of time, not wanting the conversation to end. And somewhere between those quiet moments and shared smiles, our story began.", image: "./public/images/TBR-Down.jpg" },
-    { title: "Our First Date", date: "2022", text: "Under a canopy of café lights, we shared pasta, nervous laughter, and our dreams for the future. Somewhere between dessert and the ride home, forever began.", image: "./public/images/CafeJosefina.jpg" },
-    { title: "The Proposal", date: "2026", text: "At golden hour, in a place that had quietly become ours, Emiel asked the simplest yet most meaningful question. With the sound of the waves, hearts full of love, and happy tears, Arienne gave the easiest answer of all—a beautiful, wholehearted yes.", image: "./public/images/ProposalPic.JPEG" },
-    { title: "Our Journey", date: "Today & Always", text: "Through every adventure, ordinary Sunday, and beautiful surprise, we have chosen each other. We cannot wait to begin our greatest chapter with all of you.", image: "./public/images/BoracayWhite.jpg" }
+    { title: "How We Met", date: "2022", text: "It started with stolen glances at work, followed by a simple coffee that turned into hours of stories and laughter. We lost track of time, not wanting the conversation to end. And somewhere between those quiet moments and shared smiles, our story began.", image: "/images/TBR-Down.jpg" },
+    { title: "Our First Date", date: "2022", text: "Under a canopy of café lights, we shared pasta, nervous laughter, and our dreams for the future. Somewhere between dessert and the ride home, forever began.", image: "/images/CafeJosefina.jpg" },
+    { title: "The Proposal", date: "2026", text: "At golden hour, in a place that had quietly become ours, Emiel asked the simplest yet most meaningful question. With the sound of the waves, hearts full of love, and happy tears, Arienne gave the easiest answer of all—a beautiful, wholehearted yes.", image: "/images/ProposalPic.JPEG" },
+    { title: "Our Journey", date: "Today & Always", text: "Through every adventure, ordinary Sunday, and beautiful surprise, we have chosen each other. We cannot wait to begin our greatest chapter with all of you.", image: "/images/BoracayWhite.jpg" }
   ],
   timeline: [
     { time: "3:00 PM", title: "Guest Arrival", text: "Come, settle in, and share in the joy." },
@@ -100,53 +100,53 @@ const weddingConfig = {
     ]
   },
   images: {
-    heroImage: "./public/images/CutePic.jpg",
-    openingImage: "./public/images/OpeningBlurred.JPEG",
-    dressImage: "./public/images/DressCode.png",
+    heroImage: "/images/CutePic.jpg",
+    openingImage: "/images/OpeningBlurred.JPEG",
+    dressImage: "/images/DressCode.png",
     galleryImages: [
-      { src: "./public/images/OpeningBlurred.JPEG", alt: "Timeless walk on beach" },
-      { src: "./public/images/Mamuksi.JPEG", alt: "The proof of yes" },
-      { src: "./public/images/resized_SpinPic.jpg", alt: "Our Dance" },
-      { src: "./public/images/SiargaoPic.JPG", alt: "Memorable Place" },
-      { src: "./public/images/BoracayBrown.jpg", alt: "Walking together" },
-      { src: "./public/images/Elyu.jpg", alt: "Cheesy Pictures" },
-      { src: "./public/images/Tupad.jpg", alt: "BigBoss" },
-      { src: "./public/images/BoracayWhite.jpg", alt: "All white <3" }
+      { src: "/images/OpeningBlurred.JPEG", alt: "Timeless walk on beach" },
+      { src: "/images/Mamuksi.JPEG", alt: "The proof of yes" },
+      { src: "/images/resized_SpinPic.jpg", alt: "Our Dance" },
+      { src: "/images/SiargaoPic.JPG", alt: "Memorable Place" },
+      { src: "/images/BoracayBrown.jpg", alt: "Walking together" },
+      { src: "/images/Elyu.jpg", alt: "Cheesy Pictures" },
+      { src: "/images/Tupad.jpg", alt: "BigBoss" },
+      { src: "/images/BoracayWhite.jpg", alt: "All white <3" }
     ]
   },
   // Optional: set to a direct .mp3 URL or local path. Music begins after the guest accepts.
       backgroundMusic: [
     {
         title: "Bless the Broken Road (Piano Version)",
-        file: "./public/music/bless-the-broken-road.mp3"
+        file: "/music/bless-the-broken-road.mp3"
     },
     {
         title: "Bawat Daan (Piano Version)",
-        file: "./public/music/bawat-daan.mp3"
+        file: "/music/bawat-daan.mp3"
     },
     {
         title: "Over and Over Again",
-        file: "./public/music/over-and-over-again.mp3"
+        file: "/music/over-and-over-again.mp3"
     },
     {
         title: "Hindi Ako Mawawala",
-        file: "./public/music/hindi-ako-mawawala.mp3"
+        file: "/music/hindi-ako-mawawala.mp3"
     },
     {
         title: "How Did You Know",
-        file: "./public/music/how-did-you-know.mp3"
+        file: "/music/how-did-you-know.mp3"
     },
     {
         title: "You'll Be in My Heart",
-        file: "./public/music/youll-be-in-my-heart.mp3"
+        file: "/music/youll-be-in-my-heart.mp3"
     },
     {
         title: "Never Knew Love Like This Before",
-        file: "./public/music/never-knew-love-like-this-before.mp3"
+        file: "/music/never-knew-love-like-this-before.mp3"
     },
     {
         title: "Libu-libong Buwan",
-        file: "./public/music/libu-libong-buwan.mp3"
+        file: "/music/libu-libong-buwan.mp3"
     }
        ]
 };
