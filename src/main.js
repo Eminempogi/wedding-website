@@ -4,6 +4,7 @@
    RSVP submissions are saved in this browser; connect submitRSVP()
    to your preferred form service or backend for production delivery.
 ================================================================ */
+// Fresh Vercel deployment test
 
 import './styles.css';
 
